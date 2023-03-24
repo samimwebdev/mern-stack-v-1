@@ -1,0 +1,16 @@
+REST API (Representation state transfer Application programming Interface)
+Me-Google Meet-you(Exhange Information) 
+Application - interface(Standard format) - Applicaion(Exchange Data)
+
+
+REST API
+=========
+GET - Getting all tasks from server (/tasks)
+GET - Getting a single task form Server (/tasks/:id)
+POST - Adding a new Task in Server(/tasks)
+PUT - Update a single task in Server (/tasks/:id)
+DELETE - DELETE a single task from Server (/tasks/:id)
+
+Edit (modify existing data ) -> update (PUT)
+
+Tasks(Youtube Channel)
