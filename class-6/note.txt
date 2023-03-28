@@ -1,0 +1,4 @@
+API Development with CRUD action and database support
+Error Handling
+MVC - Model View Controller
+mongoose (statcis method, regular, virtual field, relational schema)
