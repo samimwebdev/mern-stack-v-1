@@ -1,0 +1,22 @@
+Authentication (Register, login, logout)
+ -To identify the user
+
+Authorization
+ - to determine which user can do what
+
+
+Must register and logged in to create Todo (authentication)
+To update, delete Todo , Todo must be created by that user (authorization)
+
+
+Relation of data 
+  - One to One  (1 : 1) user-profile, profile-user
+  - One to Many (1: Many) user-posts user-todos, blog post-comments, blog post - tags 
+  - Many to Many (Many: Many) Blog Post-Tags, Tag - blog posts 
+
+
+
+
+one user can delete only his profile 
+Admin can delete all profile
+Admin can block any blog post comment  
