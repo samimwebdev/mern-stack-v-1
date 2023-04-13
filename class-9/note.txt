@@ -1,0 +1,12 @@
+Role Based Authorization
+  - Admin (create, edit, update, delete - any todo)
+  - user (create, edit, update, delete - todo created by himself)
+
+Pagination - 
+  - Load data chunk by chunk
+
+Image upload 
+  - multer 
+
+
+Email sending-  
