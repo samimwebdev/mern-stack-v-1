@@ -16,6 +16,7 @@ app.use(cors())
 
 //serve static file
 app.use('/', express.static(path.join(__dirname, 'public')))
+app.use('/images', express.static(path.join(__dirname, 'images')))
 
 //Parsing incoming request body JSON
 app.use(express.json())

@@ -1,5 +1,7 @@
 const User = require('../models/User')
+const Profile = require('../models/Profile')
 const jwt = require('jsonwebtoken')
+const path = require('path')
 
 const registerController = async (req, res, next) => {
   const { firstName, lastName, age, gender, email, password } = req.body
@@ -89,8 +91,58 @@ const dashboardController = async (req, res, next) => {
   const user = await User.find({ email })
   res.json({ success: true, data: user })
 }
+
+const updateProfile = async (req, res, next) => {
+  //https://facebook.com/imageDirectory/image
+  try {
+    const { firstName, lastName, gender } = req.body
+    const file = req.file
+
+    const profile = new Profile({
+      firstName,
+      lastName,
+      gender,
+      profilePic: file.filename,
+      user: req.user.userId,
+    })
+
+    await profile.save()
+
+    return res.status(201).json({
+      success: true,
+      data: profile,
+    })
+  } catch (err) {
+    next(err)
+  }
+}
+
+const serveImage = async (req, res, next) => {
+  try {
+    const { imgName } = req.params
+    const imageExists = await Profile.findOne({
+      profilePic: imgName,
+    })
+
+    //check if the image exists or not
+    if (!imageExists) {
+      return res.status(404).json({
+        success: false,
+        err: 'Image Not Found',
+      })
+    }
+
+    const filePath = path.join(__dirname, '..', 'images', imgName)
+
+    res.sendFile(filePath)
+  } catch (err) {
+    next(err)
+  }
+}
 module.exports = {
   registerController,
   loginController,
+  updateProfile,
+  serveImage,
   dashboardController,
 }

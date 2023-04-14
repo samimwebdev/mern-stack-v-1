@@ -20,6 +20,10 @@ const profileSchema = new mongoose.Schema({
     twitter: String,
     linkedin: String,
   },
+
+  profilePic: {
+    type: String,
+  },
   age: {
     type: Number,
     default: 18,
