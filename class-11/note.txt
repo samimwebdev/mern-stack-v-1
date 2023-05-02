@@ -1,0 +1,7 @@
+Emailing System
+ - send email feature (server) 
+ - account activation (frontend - server implementation)
+ - forgot password 
+ - password reset 
+
+   - frontend  - send forgot password request - send email from server - user received the emal - password reset page(frontend) - send request to the server - verify the token from the server and set new password on server - send response to frontend (login page-frontend)

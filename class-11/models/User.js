@@ -23,6 +23,16 @@ const userSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Profile',
   },
+  isVerified: {
+    type: Boolean,
+    default: false,
+  },
+  resetToken: {
+    type: String,
+  },
+  resetTokenExpiry: {
+    type: Date,
+  },
   todos: [
     {
       type: mongoose.Schema.Types.ObjectId,
